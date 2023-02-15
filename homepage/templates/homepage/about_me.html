@@ -1,17 +1,3 @@
-{% comment %} <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-</head>
-<body>
-    <h1>About_me Page</h1>
-</body>
-</html> {% endcomment %}
-
-{% comment %} 0210 {% endcomment %}
 <!DOCTYPE html>{% load static %}
 <html lang="en">
 <head>
@@ -25,9 +11,8 @@
 </head>
 <body>
     {% include 'blog/navbar.html' %}
-
     <section class="margin-for-footer">
-        <div class="container mt-t">
+        <div class="container pt-5 mt-t">
             <div class="row">
                 <div class="col-lg-8">
                     <h1>Data Specialist Kevin</h1>
@@ -42,8 +27,9 @@
                     </ul>
                 </div>
                 <div class="col-lg-4 mt-5">
-                    <img class="image-fluid" width="600" src="{% static 'homepage/images/캐리커쳐.GIF' %}">
+                    <img class="img-fluid" width="600" src="{% static 'homepage/images/캐리커쳐.GIF' %}">
                 </div>
+
 
             </div>
         </div>

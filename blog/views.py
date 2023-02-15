@@ -1,15 +1,3 @@
-# from django.shortcuts import render
-# from django.views.generic import ListView, DetailView
-# from .models import Post
-
-# class PostList(ListView):
-#     model = Post
-#     ordering = '-pk'
-
-# class PostDetail(DetailView):
-#     model = Post
-
-# 0210
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
@@ -39,6 +27,7 @@ class PostDetail(DetailView):
         context['no_category_post_count'] = Post.objects.filter(category=None).count()
         context['comment_form'] = CommentForm
         return context
+
 
 class PostCreate(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     model = Post
@@ -115,6 +104,7 @@ class PostUpdate(LoginRequiredMixin, UpdateView):
 
         return response
 
+# slug는 일반적으로 이미 얻은 데이터를 사용하여 유효한 url을 생성하는 방법
 def category_page(request, slug):
     if slug == 'no_category':
         category = '미분류'
